@@ -1,0 +1,9 @@
+<br />
+<%= link_to 'Back', condominia_path %>
+<br />
+<h1>Editing condominium</h1>
+<%= form_with(model: @condominium, local: true) do |form| %>
+  <%= form.label :name %><br />
+  <%= form.text_field :name %><br />
+  <button type="submit">save</button>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>My condominia</h1>
+<%= link_to 'new condominium', new_condominium_path %>
+<table>
+  <thead>
+	  <tr>
+		  <th>name</th>
+			<th></th>
+		</tr>
+	</thead>
+  <% @condominia.find_each do |condo| %>
+    <tr>
+		  <td>
+			  <%= condo.name %>
+			</td>
+			<td>
+			  <%= link_to 'Edit', edit_condominium_path(condo) %> |
+			  <%= link_to 'eliminar', condominium_path(condo), method: :delete, data: {confirm: 'Are you sure?'} %>
+			</td>
+		</tr>
+  <% end %>
+</table>
